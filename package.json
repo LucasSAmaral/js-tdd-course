@@ -16,7 +16,7 @@
     "library"
   ],
   "author": "Lucas Amaral <lucassantosamaral@hotmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/LucasSAmaral/js-tdd-course/issues"
   },

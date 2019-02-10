@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03 - This no Arrow Function Exemplo</title>
+</head>
+<body>
+    <button id="btn">Make my sandwich!</button>
+</body>
+
+<script>
+
+    // Arrow function dentro de funções, ao usar o this, referencia-se o objeto e não a window
+
+    const sandwich = {
+        bread: 'white',
+        cheese: 'cheddar',
+
+        prepare: function() {
+            return `I want a sandwich with ${this.bread} bread and ${this.cheese}`
+        },
+
+        make: function() {
+            window.setTimeout(() => {
+                console.log(this.prepare());
+            }, 500);
+        }
+    };
+
+    const btn = document.getElementById('btn');
+
+    btn.addEventListener('click', function() { sandwich.make() });
+
+</script>
+
+</html>

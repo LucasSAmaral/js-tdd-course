@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>01 - Destructuring Objects</title>
+  </head>
+  <body></body>
+
+  <script>
+    var data = {
+      name: "Lucas",
+      surname: "Amaral",
+      age: 27,
+      social: {
+        twitter: "Lucas.Amaral92",
+        facebook: "/lucas.santosdoamaral"
+      }
+    };
+
+    // const name = data.name;
+    // const surname = data.surname;
+    // const twitter = data.social.twitter;
+    // console.log(name);
+    // console.log(surname);
+    // console.log(twitter);
+
+    const { name, surname } = data;
+    console.log(name);
+    console.log(surname);
+
+    const { twitter, facebook } = data.social;
+
+    console.log(twitter);
+    console.log(facebook);
+
+    const { facebook: fb } = data.social;
+
+    console.log(fb);
+
+    const { city = "Belford Roxo" } = data;
+    console.log(city);
+  </script>
+</html>

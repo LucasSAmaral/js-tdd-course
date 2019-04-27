@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Teste com Spread Operator</title>
+  </head>
+  <body></body>
+
+  <script>
+    const pessoas = [
+      {
+        nome: "Lucas",
+        idade: 27,
+        cidade: "Belford Roxo",
+        profissao: "Dev Front"
+      },
+      {
+        nome: "Paulo",
+        idade: 22,
+        cidade: "Porto",
+        profissao: "Historiador"
+      }
+    ];
+
+    console.log("Array de Objetos original: ", pessoas);
+
+    const pessoas1 = [...pessoas][0];
+    const pessoas2 = [...pessoas][1];
+
+    const reducer = (acc, currVal) => acc.concat(currVal);
+
+    const pessoasGeral = [[pessoas1], [pessoas2]].reduce(reducer);
+
+    const pessoasGeralInverter = [[pessoas2], [pessoas1]].reduce(reducer);
+
+    console.log(
+      "Novo objeto feito com spread operator do primeiro index do array original: ",
+      pessoas1
+    );
+    console.log(
+      "Novo objeto feito com spread operator do segundo index do array original: ",
+      pessoas2
+    );
+
+    console.log(
+      "Array de objetos feito com reducer para concatenar os dois novos objetos: ",
+      pessoasGeral
+    );
+
+    console.log(
+      "Array de objetos feito com reducer para concatenar os dois novos objetos, passando o segundo index para a primeira posição: ",
+      pessoasGeralInverter
+    );
+  </script>
+</html>
